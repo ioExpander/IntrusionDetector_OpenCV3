@@ -1,0 +1,10 @@
+{
+	"show_video": false,
+	"use_dropbox": true,
+  "video_capture_source": "rtsp://<XIAOFANG CAMERA IP>:554/unicast",
+	"dropbox_token": "<DROPBOX APP TOKEN>",
+	"wait_seconds_between_caps": 15,
+	"max_frames_per_vid": 240,
+	"max_error_frames": 2,
+	"max_reconnects": 3
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=Monitor Intrusion Cam
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/Code/OpenCVTests
+ExecStartPre=/bin/sleep 2
+ExecStart=/bin/sh -c '/home/pi/.virtualenvs/cv3/bin/python /home/pi/Code/OpenCVTests/IntrusionDetect.py >> /home/pi/Code/OpenCVTests/run.log 2>&1'
+Restart=always
+RestartSec=3
+StartLimitIntervalSec=120
+StartLimitBurst=4
+
+[Install]
+WantedBy=multi-user.target
